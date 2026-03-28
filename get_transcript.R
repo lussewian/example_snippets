@@ -1,3 +1,5 @@
+#' Script to scan video files and transcripe audio to a text file
+
 library(reticulate)
 reticulate::install_miniconda()
 reticulate::conda_create("whisper-env", packages = c("python=3.10"))
