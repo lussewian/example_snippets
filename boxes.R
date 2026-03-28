@@ -1,4 +1,5 @@
-install.packages("rectpacker")
+#' Script to find optimal box packing within a square
+
 library(rectpacker)
 
 cm <- 2.54
