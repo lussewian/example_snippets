@@ -30,7 +30,7 @@ for (file in files_list) {
   system(sprintf('ffmpeg -i "%s" -vn -acodec libmp3lame "%s"', input_file, output_file), intern = TRUE)
   
   if (!file.exists(output_file)) {
-    message <- paste("⚠️ Audio extraction failed for:", input_file)
+    message <- paste("File does not exist:", input_file)
     cat(message, "\n")
     next
   }
