@@ -21,11 +21,9 @@ sink(log_file, append = TRUE)
 
 files_list <- list.files(path, pattern = "\\.mp4$", full.names = TRUE)
 
-
 for (file in files_list) {
   input_file <- file
   output_file <- sub("\\.mp4$", ".mp3", input_file)
-  
 
   system(sprintf('ffmpeg -i "%s" -vn -acodec libmp3lame "%s"', input_file, output_file), intern = TRUE)
   
@@ -35,11 +33,8 @@ for (file in files_list) {
     next
   }
   
-
   result <- model$transcribe(output_file)
-  
   cat(result$text[1], "\n")
-  
 
   if (grepl(phrase, result$text[1], ignore.case = TRUE)) {
     cat("The file is:", file, "\n")
@@ -50,5 +45,3 @@ for (file in files_list) {
 }
 
 sink()
-
-
