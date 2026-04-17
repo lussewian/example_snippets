@@ -44,10 +44,10 @@ rects <- read.csv("rectangles.csv") %>%
     idx = idx + 1
   )
 
-# Plot packed rectangles
+
 ggplot(rects, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax)) +
   geom_rect(aes(fill = factor(idx)), colour = "black", linewidth = 0.3, alpha = 0.85) +
-  # label each rectangle in its center (optional)
+
   geom_text(
     aes(x = (xmin + xmax) / 2, y = (ymin + ymax) / 2, label = idx),
     size = 3, colour = "black"
